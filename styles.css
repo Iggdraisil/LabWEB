@@ -1,0 +1,74 @@
+button.navButton {
+    padding: 10px 0 10px 0;
+    border: black solid;
+    height: 50px;
+    width: 150px;
+    background: black;
+    color: white;
+}
+
+body {
+    position: relative;
+    left: 170px;
+    width: 1100px;
+    background: black;
+    color: white;
+}
+
+#logo {
+    size: letter;
+    width: 180px;
+    height: 50px;
+}
+
+button.navStyle {
+    width: 1400px;
+    padding-right: 0;
+}
+button:hover {
+    background-color: #500000;
+}
+#ForFans:hover #hoverList{
+    visibility: visible;
+}
+
+#navList {
+    padding:10px;
+    list-style: none;
+    overflow: hidden;
+}
+li.navListItem {
+    float: left;
+}
+li.hoverListItem {
+
+}
+#hoverList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    visibility: hidden;
+    position: relative;
+}
+img.band {
+    margin-top: -150px;
+    height: 500px;
+    width: 1090px;
+}
+p {
+    text-align: center;
+    font-size: 20px;
+}
+
+img.Album {
+    align-self: center;
+    height: 400px;
+    width: 500px;
+}
+h4 {
+   text-align: center;
+}
+
+#footer {
+    text-align: center;
+}
