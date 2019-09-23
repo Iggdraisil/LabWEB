@@ -1,0 +1,40 @@
+td.table-item {
+    height: 250px;
+    width: 250px;
+    margin-right: 150px;
+    animation-name: news_load;
+    animation-duration: 3s;
+}
+
+p {
+    margin-bottom: 100px;
+}
+
+img.table-img {
+    height: 170px;
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+table {
+    margin-top: -150px;
+    width: 100%;
+}
+
+.text-container {
+    width: 250px;
+    text-align: center;
+}
+.news-title {
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #4e9196;
+    display: block;
+    width: 250px;
+    text-decoration: none;
+}
+
+@keyframes news_load {
+    from {transform:translateX(-1000px)}
+    to {transform: translateX(0)}
+}

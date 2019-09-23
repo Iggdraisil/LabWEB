@@ -1,0 +1,70 @@
+body {
+    position: relative;
+    left: 170px;
+    width: 80%;
+    background: black;
+    color: white;
+}
+
+#ForFans:hover #hoverList{
+    visibility: visible;
+    animation-name: appear;
+    animation-duration: 2s;
+}
+#menu {
+    padding:10px;
+    list-style: none;
+    overflow: hidden;
+}
+nav.navStyle {
+    width: 100%;
+    padding-right: 0;
+}
+
+.navLink {
+    text-decoration: none;
+    color: white;
+}
+
+button.menu-button {
+    padding: 10px 0 10px 0;
+    border: black solid;
+    height: 50px;
+    font-size: 15px;
+    width: 150px;
+    background: black;
+    color: white;
+}
+button.menu-button:hover {
+    background: #500000;
+    animation-name: menu-item-anim;
+    animation-duration: .5s;
+}
+
+li.menu-item {
+    float: left;
+}
+#hoverList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    visibility: hidden;
+    position: relative;
+}
+#logo {
+    size: letter;
+    width: 180px;
+    height: 50px;
+    animation-name: appear;
+    animation-duration: 2s;
+}
+
+@keyframes appear {
+    from {opacity: 0}
+    to {opacity: 100%}
+}
+
+@keyframes menu-item-anim {
+    from {background-color: black;}
+    to {background-color: #500000;}
+}
