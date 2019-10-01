@@ -1,13 +1,16 @@
 body {
     position: relative;
-    left: 170px;
-    width: 80%;
+    left: 12%;
+    width: 76%;
+    margin-right: 12%;
     background: black;
     color: white;
 }
 
 #ForFans:hover #hoverList{
-    visibility: visible;
+    z-index: 1000000;
+    display: block;
+    position: absolute;
     animation-name: appear;
     animation-duration: 2s;
 }
@@ -18,7 +21,7 @@ body {
 }
 nav.navStyle {
     width: 100%;
-    padding-right: 0;
+    padding: 0 0 10rem 0;
 }
 
 .navLink {
@@ -48,7 +51,7 @@ li.menu-item {
     padding: 0;
     margin: 0;
     list-style: none;
-    visibility: hidden;
+    display: none;
     position: relative;
 }
 #logo {
