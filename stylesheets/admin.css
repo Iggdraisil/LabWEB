@@ -1,0 +1,25 @@
+#image-to-post {
+    margin: -3% 0 0 40%;
+    width: 60%;
+}
+body {
+    text-align: center;
+    left:0;
+}
+.button {
+    float: left;
+}
+#button-send {
+    margin-left: 1.5%;
+}
+form {
+    text-align: right;
+    margin: 6% 0 -3%;
+}
+input {
+    width: 50%;
+}
+#body {
+    height: 200px;
+    width: 50%;
+}

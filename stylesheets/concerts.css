@@ -1,0 +1,13 @@
+body {
+    text-align: center;
+    left: 0;
+}
+
+iframe {
+    width: 80%;
+    height: 200px;
+}
+
+h1 {
+    margin-top: -5% ;
+}

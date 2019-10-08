@@ -1,38 +1,38 @@
-td.table-item {
-    height: 250px;
-    width: 250px;
-    margin-right: 5%;
+td {
+    width: 100%;
     animation-name: news_load;
     animation-duration: 2s;
+    margin: 0 0 10% 0;
+    padding: 0;
 }
 
-p {
-    margin-bottom: 100px;
-
+body {
+    text-align: center;
+    left: 0;
 }
+
 
 img.table-img {
     width: 100%;
     margin-bottom: 30px;
 }
 
-table {
-    margin: 0 0 0 13%;
-    width: 10%;
-}
-
 .text-container {
     width: 100%;
     text-align: center;
     color: #0c5460;
+    margin: 0 auto;
 }
 .news-title {
+    width: 100%;
     font-size: 1.5em;
     letter-spacing: 2px;
     color: #4e9196;
     display: block;
-    width: 100%;
     text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
 }
 
 @keyframes news_load {

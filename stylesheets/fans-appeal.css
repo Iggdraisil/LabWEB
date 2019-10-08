@@ -1,0 +1,32 @@
+.fan-name {
+    float: left;
+    position: absolute;
+}
+.appeal-body {
+    float: right;
+    margin: 0 0 0 20%;
+}
+body {
+    left: 0;
+}
+ul li {
+    background: black !important;
+}
+#appeal-body {
+    width: 40%;
+    float: right;
+    height: 100px;
+    margin: 0 10%;
+}
+#button-send {
+    float: bottom;
+    margin-left: 5%;
+}
+form {
+    margin: 5% auto;
+}
+@media (max-width: 755px) {
+    .fan-name {
+        position: relative;
+    }
+}
