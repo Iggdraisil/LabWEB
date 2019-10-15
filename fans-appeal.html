@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="cache.manifest">
 <head>
     <meta charset="UTF-8">
-    <title>Admin</title>
+    <title>Fans Appeal</title>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -10,8 +10,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../stylesheets/common.css">
-    <link rel="stylesheet" href="../stylesheets/admin.css">
+    <link rel="stylesheet" href="stylesheets/common.css">
+    <link rel="stylesheet" href="stylesheets/fans-appeal.css">
 </head>
 <nav class="navbar navbar-expand-md navbar-dark navStyle">
     <button  class="navbar-toggler" data-toggle="collapse" data-target="#collapse-target">
@@ -19,7 +19,7 @@
     </button>
     <div class="collapse navbar-collapse" id="collapse-target">
         <ul id=menu class="navbar-nav">
-            <li class="nav-item menu-item" style="width: 180px"><img id="logo" src="../images/logo.png" alt="Disturbed"></li>
+            <li class="nav-item menu-item" style="width: 180px"><img id="logo" src="images/logo.png" alt="Disturbed"></li>
             <li class=" nav-item menu-item">
                 <BUTTON class="menu-button"><a class="navLink" href="index.html">Main</a></BUTTON>
             </li>
@@ -52,21 +52,33 @@
         </ul>
     </div>
 </nav>
+
 <body class="container container-fluid">
+<ul class="list-group">
+    <li class="list-group-item">
+        <article class="fan-name">Amadzhad Kuli <br/> 14:35 <br/>22.05.1090</article>
+        <article class="appeal-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum</article>
+    </li>
+    <li class="list-group-item">
+        <article class="fan-name">Amadzhad Kuli <br/> 14:35 <br/>22.05.1090</article>
+        <article class="appeal-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum</article>
+    </li>
 
-<article class="container container-fluid news-article" style="margin-top: -50px">
-<button id = "button-add-image" class="btn btn-secondary button">Add image</button>
-<img alt="Зображення новини" src="../images/Disturbed2-e1553478807318.jpg" id="image-to-post">
-</article>
+</ul>
+<form class="container container-fluid">
+    <button id="button-send" class="btn btn-primary">Send</button>
+    <textarea id="appeal-body" placeholder="Write an appeal"></textarea>
+</form>
 
-<article class="container container-fluid news-article">
-    <button id="button-send" class="btn btn-primary button">Send</button>
-    <form>
-        <input placeholder="News title" id="title">
-    </form>
-    <form>
-        <textarea placeholder="News body" id="body"></textarea>
-    </form>
-</article>
 </body>
 </html>

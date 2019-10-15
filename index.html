@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="cache.manifest">
 <head>
     <meta charset="UTF-8">
-    <title>Fans Appeal</title>
+    <title>Disturbed</title>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -10,16 +10,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../stylesheets/common.css">
-    <link rel="stylesheet" href="../stylesheets/fans-appeal.css">
+    <link rel="stylesheet" href="stylesheets/common.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
 </head>
+
+<body>
 <nav class="navbar navbar-expand-md navbar-dark navStyle">
     <button  class="navbar-toggler" data-toggle="collapse" data-target="#collapse-target">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapse-target">
         <ul id=menu class="navbar-nav">
-            <li class="nav-item menu-item" style="width: 180px"><img id="logo" src="../images/logo.png" alt="Disturbed"></li>
+            <li class="nav-item menu-item" style="width: 180px"><img id="logo" src="images/logo.png" alt="Disturbed"></li>
             <li class=" nav-item menu-item">
                 <BUTTON class="menu-button"><a class="navLink" href="index.html">Main</a></BUTTON>
             </li>
@@ -52,33 +54,44 @@
         </ul>
     </div>
 </nav>
+<header><h1>Disturbed</h1></header>
+<img class="band" src="images/disturbed.png" alt="Disturbed ones">
+<article>
+    <h4>About Band:</h4>
+    <p>Disturbed is an American heavy metal band from Chicago, formed in 1994.
+        The band includes vocalist David Draiman,
+        guitarist/keyboardist Dan Donegan, bassist John Moyer and drummer Mike Wengren.
+        They have had very few lineup changes,
+        with Donegan and Wengren being the only two remaining original members.
+        Former band members are vocalist Erich Awalt,
+        and bassist Steve Kmak. The band has released seven studio albums, five
+        of which have consecutively debuted at number
+        one on the Billboard 200. Disturbed went into hiatus in October 2011,
+        during which the band's members focused on
+        various side projects, and returned in June 2015, releasing their first
+        album in four years, Immortalized, on August 21,
+        2015. They also recorded and released one live album, Disturbed: Live at
+        Red Rocks on November 18, 2016, which was
+        recorded on August 18, 2016, at Red Rocks Amphitheatre in Morrison, Colorado,
+        located about 10 miles west of Denver,
+        Colorado. Their seventh studio album, Evolution, was released on October 19, 2018.</p>
+</article>
 
-<body class="container container-fluid">
-<ul class="list-group">
-    <li class="list-group-item">
-        <article class="fan-name">Amadzhad Kuli <br/> 14:35 <br/>22.05.1090</article>
-        <article class="appeal-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum</article>
-    </li>
-    <li class="list-group-item">
-        <article class="fan-name">Amadzhad Kuli <br/> 14:35 <br/>22.05.1090</article>
-        <article class="appeal-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum</article>
-    </li>
+<article>
+    <h4>Best Album:</h4>
+    <article style="text-align: center"><img class="Album" src="images/best_album.jpg"
+                                             alt="Перший і останній альбом"></article>
 
-</ul>
-<form class="container container-fluid">
-    <button id="button-send" class="btn btn-primary">Send</button>
-    <textarea id="appeal-body" placeholder="Write an appeal"></textarea>
-</form>
+</article>
 
+<footer>
+    <br/>
+    <br/>
+    <article style="text-align: center">
+        Права на власність: Олег Падучак inc
+    </article>
+</footer>
 </body>
+
+
 </html>

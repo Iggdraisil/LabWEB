@@ -5,8 +5,8 @@ h1 {
     letter-spacing: 5px;
 }
 img.band {
-    width: 100%;
-    animation: news_load 3s;
+    width: 80%;
+    animation: news_load 2s;
 }
 p {
     text-align: center;
@@ -14,11 +14,15 @@ p {
 }
 img.Album {
     align-self: center;
-    width: 50%;
+    width: 40%;
 }
 h4 {
    text-align: center;
     font-size: 2em;
+}
+nav {
+    margin-left: 10%;
+    width: 90%;
 }
 
 @keyframes news_load {
