@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="cache.manifest">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Admin</title>
@@ -54,19 +54,20 @@
 </nav>
 <body class="container container-fluid">
 
-<article class="container container-fluid news-article" style="margin-top: -50px">
-<button id = "button-add-image" class="btn btn-secondary button">Add image</button>
+<article class="container container-fluid news-article">
+<input id = "button-add-image" type="file">
 <img alt="Зображення новини" src="images/Disturbed2-e1553478807318.jpg" id="image-to-post">
 </article>
 
-<article class="container container-fluid news-article">
-    <button id="button-send" class="btn btn-primary button">Send</button>
+<article id = "input" class="container container-fluid news-article">
+    <button id="button-send" onclick="submit()" class="btn btn-primary button">Send</button>
     <form>
-        <input placeholder="News title" id="title">
+        <input onchange="onchange()" placeholder="News title" id="title">
     </form>
     <form>
-        <textarea placeholder="News body" id="body"></textarea>
+        <textarea onchange="onchange()" placeholder="News body" id="body"></textarea>
     </form>
 </article>
 </body>
+<script src="script/admin.js"></script>
 </html>

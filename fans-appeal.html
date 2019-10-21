@@ -54,7 +54,7 @@
 </nav>
 
 <body class="container container-fluid">
-<ul class="list-group">
+<ul id="list" class="list-group">
     <li class="list-group-item">
         <article class="fan-name">Amadzhad Kuli <br/> 14:35 <br/>22.05.1090</article>
         <article class="appeal-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -75,10 +75,12 @@
     </li>
 
 </ul>
-<form class="container container-fluid">
-    <button id="button-send" class="btn btn-primary">Send</button>
-    <textarea id="appeal-body" placeholder="Write an appeal"></textarea>
-</form>
-
+<article class="container container-fluid">
+    <button id="button-send" onclick="submit()" class="btn btn-primary">Send</button>
+    <form >
+        <textarea id="appeal-body" placeholder="Write an appeal"></textarea>
+    </form>
+</article>
+<script src="script/fans-appeal.js"></script>
 </body>
 </html>

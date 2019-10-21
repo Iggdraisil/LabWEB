@@ -12,12 +12,19 @@ body {
 #button-send {
     margin-left: 1.5%;
 }
+#button-add-image {
+    float: left!important;
+}
 form {
     text-align: right;
     margin: 6% 0 -3%;
 }
+nav {
+    z-index: 0;
+}
 input {
     width: 50%;
+    z-index: 1000;
 }
 #body {
     height: 200px;
