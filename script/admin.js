@@ -30,8 +30,9 @@ function submit() {
     }
 
     if (image_changed) {
-        if (correct ) {
+        if (correct) {
             alert("Новина завантажена успішно!");
+            submit_to_backend(body,title);
             document.getElementById("title").value = "";
             document.getElementById("body").value = "";
             image.src = source;
@@ -45,6 +46,21 @@ function submit() {
     }
 }
 
+function submit_to_backend(body, title) {
+    if (window.navigator.onLine) {
+    } else {
+        let last_index = parseInt(localStorage.getItem("last-index-admin"));
+        if (isNaN(last_index)) {
+            last_index = -1;
+        }
+        let current_index = last_index + 1;
+        localStorage.setItem("news-text" +current_index, body);
+        localStorage.setItem("news-title" +current_index, title);
+        localStorage.setItem("news-image" +current_index, getBase64Image(image));
+        localStorage.setItem("last-index-admin", current_index)
+    }
+}
+
 function onchange() {
     let title = document.getElementById("title").value;
     let body = document.getElementById("body").value;
@@ -53,4 +69,17 @@ function onchange() {
         document.getElementById("body").style.color = "black";
     if (title.length> 10)
         document.getElementById("title").style.color = "black";
+}
+
+function getBase64Image(img) {
+    let canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    let ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+
+    let dataURL = canvas.toDataURL("image/png");
+
+    return dataURL;
 }

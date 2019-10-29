@@ -3,7 +3,7 @@
     position: absolute;
 }
 .appeal-body {
-    float: right;
+    float: left;
     margin: 0 0 0 20%;
 }
 body {
@@ -17,6 +17,9 @@ ul li {
     float: right;
     height: 100px;
     margin: 0 10%;
+}
+.list-group-item {
+    height:20vh;
 }
 #button-send {
     float: bottom;

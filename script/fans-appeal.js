@@ -2,31 +2,66 @@ document.getElementById("appeal-body").addEventListener("change", function() {
     let appeal_text = document.getElementById("appeal-body").value;
     if (appeal_text.length> 10)
         document.getElementById("appeal-body").style.color = "black";
-});
+    });
+localStorage = window.localStorage;
+getLocalStorage();
 
 function submit() {
     let appeal_text = document.getElementById("appeal-body").value;
-    let list = document.getElementById("list");
-
     if (appeal_text.length< 10) {
         document.getElementById("appeal-body").style.color = "red";
         alert("Неформат! Відгук надто короткий.");
     } else {
-        let new_appeal = document.createElement("li");
-        new_appeal.setAttribute("class", "list-group-item");
-        let user = document.createElement("article");
-        user.setAttribute("class", "fan-name");
         let date = new Date();
-        let user_text = "Amazhad Kuli " + "\n" + date.getHours() + ":" + date.getMinutes() + "\n" +date.getDay()
-                + "." + date.getMonth() + "." + date.getFullYear();
-        user.appendChild(document.createTextNode(user_text));
-        new_appeal.appendChild(user);
-        let appeal_body =  document.createElement("article");
-        appeal_body.setAttribute("class", "appeal-body");
-        appeal_body.appendChild(document.createTextNode(appeal_text));
-        new_appeal.appendChild(appeal_body);
-        let a = list.appendChild(new_appeal);
+        let appeal_time = date.getHours() + ":" + date.getMinutes();
+        let appeal_date = date.getDate() + "." + (date.getMonth()+1)  + "." + date.getFullYear();
+        apennd_appeals(appeal_text, appeal_time, appeal_date);
+        submit_to_backend(appeal_text, appeal_time, appeal_date);
         document.getElementById("appeal-body").value = "";
         alert("Відгук завантажено успішно!");
     }
 }
+
+function apennd_appeals(text, time, date) {
+    let list = document.getElementById("list");
+    let new_appeal = document.createElement("li");
+    new_appeal.setAttribute("class", "list-group-item");
+    list.appendChild(new_appeal).innerHTML = `
+        <article class="fan-name">Amadzhad Kuli <br/>${time}<br/>${date}</article>
+        <article class="appeal-body">${text}</article>`;
+}
+
+function submit_to_backend(text, time, date) {
+    if (window.navigator.onLine) {
+
+    } else {
+        let lastIndex = parseInt(localStorage.getItem("lastIndex"));
+        if (isNaN(lastIndex)) {
+            lastIndex = -1;
+        }
+        let current_index = lastIndex + 1;
+        localStorage.setItem("appeal-text" +current_index, text);
+        localStorage.setItem("appeal-time" +current_index, time);
+        localStorage.setItem("appeal-date" +current_index, date);
+        localStorage.setItem("lastIndex", current_index)
+    }
+}
+
+function getLocalStorage() {
+    let storageSize = parseInt(window.localStorage.getItem("lastIndex"));
+    if (isNaN(storageSize))
+        return;
+
+    for (let i= 0; i <= storageSize; i++) {
+        let appeal_text = localStorage.getItem("appeal-text" + i);
+        let appeal_time = localStorage.getItem("appeal-time" + i);
+        let appeal_date = localStorage.getItem("appeal-date" + i);
+        if (appeal_text == null) {
+            continue
+        }
+        apennd_appeals(appeal_text, appeal_time, appeal_date);
+    }
+}
+
+
+
