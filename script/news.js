@@ -1,8 +1,17 @@
-let storageSize = parseInt(window.localStorage.getItem("last-index-admin"));
-getLocalStorage();
-var table_row;
 
-function getLocalStorage() {
+let table_row;
+let useLocalStorage = false;
+
+
+if (useLocalStorage) {
+    getLocalStorage(parseInt(window.localStorage.getItem("last-index-admin")))
+} else {
+    openDataBase(null, "news", function (news) {
+        append_news(news.body, news.title, news.image, news.id, useLocalStorage)
+    });
+}
+
+function getLocalStorage(storageSize) {
     if (isNaN(storageSize))
         return;
     for (let i= 0; i <= storageSize; i++) {
@@ -11,7 +20,7 @@ function getLocalStorage() {
         let image = localStorage.getItem("news-image" + i);
         if (text == null)
             continue;
-        append_news(text, title, image, i);
+        append_news(text,title,image,i)
     }
 }
 function append_news(text, title, image, current_index) {
@@ -20,7 +29,10 @@ function append_news(text, title, image, current_index) {
     <img class="table-img" src="${image}" alt="tour picture">
     <a href="" class="text-container news-title">${title}</a>
 <p class="text-container">${text}</p></td>`;
-    let row = current_index%3;
+    var row = current_index%3;
+    if(!useLocalStorage) {
+        row -=1
+    }
     if (row == undefined || row === 0) {
         table_row = document.createElement("tr");
         table_row.setAttribute("class", "row");
