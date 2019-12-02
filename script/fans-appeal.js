@@ -14,6 +14,19 @@ else
         apennd_appeals(appeal.text, appeal.time, appeal.date)
     });
 
+let url = "http://localhost:8080/appeals";
+let request = new XMLHttpRequest();
+request.responseType = 'json';
+request.open("GET", url, true);
+request.onload = function() {
+    let appeals = request.response;
+    if (typeof request.response == "string")
+        appeals = JSON.parse(appeals);
+    appeals.forEach( elem => {
+        apennd_appeals(elem.text, elem.time, elem.date)
+    })
+};
+request.send(null);
 function submit() {
     let appeal_text = document.getElementById("appeal-body").value;
     if (appeal_text.length < 10) {
@@ -44,9 +57,17 @@ function apennd_appeals(text, time, date) {
 }
 
 function submit_to_backend(text, time, date) {
-
+    let object_to_post = {
+        text: text,
+        time: time,
+        date: date
+    };
     if (window.navigator.onLine) {
-
+        let url = "http://localhost:8080/appeals";
+        let request = new XMLHttpRequest();
+        request.open("POST", url, true);
+        request.setRequestHeader("Content-Type", "application/json");
+        request.send(JSON.stringify(object_to_post));
     } else {
         if (use_localstorage) {
             let lastIndex = parseInt(localStorage.getItem("lastIndex"));
@@ -59,11 +80,7 @@ function submit_to_backend(text, time, date) {
             localStorage.setItem("appeal-date" + current_index, date);
             localStorage.setItem("lastIndex", current_index)
         } else {
-            openDataBase({
-                text: text,
-                time: time,
-                date: date
-            }, "appeals", null)
+            openDataBase(object_to_post, "appeals", null)
         }
     }
 }

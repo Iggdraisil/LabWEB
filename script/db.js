@@ -18,10 +18,7 @@ function write_to_DB(object_to_post, type, db, callback) {
             let cursor = evt.target.result;
             if (cursor) {
                 let object = cursor.value;
-                if (type === "news")
-                    callback(object);
-                else
-                    callback(object);
+                callback(object);
                 cursor.continue()
             }
         };

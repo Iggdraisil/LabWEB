@@ -1,6 +1,6 @@
-
 let table_row;
 let useLocalStorage = false;
+let news;
 
 
 if (useLocalStorage) {
@@ -11,6 +11,20 @@ if (useLocalStorage) {
     });
 }
 
+let url = "http://localhost:8080/news";
+let request = new XMLHttpRequest();
+request.responseType = 'json';
+request.open("GET", url, true);
+request.onload = function() {
+    news = request.response;
+    if (typeof request.response == "string")
+        news = JSON.parse(news);
+    news.forEach( (elem, index) => {
+        append_news(elem.body, elem.title, elem.image, index)
+    })
+};
+request.send(null);
+
 function getLocalStorage(storageSize) {
     if (isNaN(storageSize))
         return;
@@ -20,19 +34,18 @@ function getLocalStorage(storageSize) {
         let image = localStorage.getItem("news-image" + i);
         if (text == null)
             continue;
-        append_news(text,title,image,i)
+         append_news(text,title,image,i)
     }
 }
 function append_news(text, title, image, current_index) {
     let table = document.getElementById("table");
+    console.log(image);
     const template =  `<td class="col-lg-4 col-md-6 col-sm-12">
     <img class="table-img" src="${image}" alt="tour picture">
     <a href="" class="text-container news-title">${title}</a>
 <p class="text-container">${text}</p></td>`;
     var row = current_index%3;
-    if(!useLocalStorage) {
-        row -=1
-    }
+
     if (row == undefined || row === 0) {
         table_row = document.createElement("tr");
         table_row.setAttribute("class", "row");

@@ -9,7 +9,6 @@ let database_opened = false;
 
 input.addEventListener("change", function () {
     image.src = URL.createObjectURL(input.files[0]);
-    console.log(image);
     if (image.src != source) {
         image_changed = true
     }
@@ -50,12 +49,18 @@ function submit() {
 
 function submit_to_backend(body, title) {
     let image_link = getBase64Image(image);
+    console.log(image_link);
     let news_to_post = {
         title: title,
         body: body,
         image: image_link
     };
     if (window.navigator.onLine) {
+        let url = "http://localhost:8080/news";
+        let request = new XMLHttpRequest();
+        request.open("POST", url, true);
+        request.setRequestHeader("Content-Type", "application/json");
+        request.send(JSON.stringify(news_to_post));
     } else {
         if (use_local_storage) {
             let last_index = parseInt(localStorage.getItem("last-index-admin"));
